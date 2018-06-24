@@ -1,0 +1,54 @@
+package bankingSystem;
+
+import java.util.Random;
+
+public class Account {
+private String memberName;
+String accountNumber;
+private static double accountBalance;
+
+public Account(){
+   
+}
+public  Account(String memeberName,double accountBalance)
+{
+     this.memberName = memberName;
+     this.accountBalance  = accountBalance;    
+  }
+
+    void deposite(double amount){
+        if(amount>0){
+            setAccountBalance(getAccountBalance() + amount);
+            System.out.println("Amount Deposited. Available Balance = "+getAccountBalance());
+            
+        }
+        else{
+            System.out.println("NOt deposited");
+        }
+    }   
+ 
+ public String getMemberName() {
+        return memberName;
+    }
+
+    public double getAccountBalance() {
+        return accountBalance;
+    }
+
+    public void setMemberName(String memberName) {
+        this.memberName = memberName;
+    }
+
+    public void setAccountBalance(double accountBalance) {
+        this.accountBalance = accountBalance;
+    }
+  void display(){
+        System.out.println("Balance="+getAccountBalance());
+    }
+  void generateAccountNumber(){
+      Random rand = new Random();
+   accountNumber= 10000 + rand.nextInt(89999) + "";
+    System.out.println("Account Number = " +accountNumber); 
+      System.out.println("=====================================");
+  }
+}

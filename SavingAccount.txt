@@ -1,0 +1,30 @@
+
+package bankingSystem;
+
+import java.util.Scanner;
+
+
+public class SavingAccount extends Account{
+    final double interest = 5 ;
+    private double max_limit;
+    private double minBalance =500;
+    public SavingAccount(){
+        
+    }
+    public SavingAccount(String memeberName, double accountBalance) {
+        super(memeberName, accountBalance);   
+    }
+       
+    void maxLimit(double max_limit){            
+      this.max_limit = max_limit;    
+    }
+    public void withdraw(double amount){      
+        if((minBalance+amount)<max_limit){           
+            setAccountBalance(getAccountBalance()-amount);            
+        }else{
+            System.out.println("Limit Exceed");
+        }  
+        
+    }
+   
+}
